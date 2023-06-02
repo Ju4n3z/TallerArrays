@@ -1,5 +1,10 @@
 <?php
 
+    /**
+     *TODO Punto 1
+     */
+
+    /*
     $planetas = array(
         "Sol" => 0,
         "Mercurio" => 1,
@@ -27,5 +32,51 @@
     </div>
     
     HTML;
+    */
 
+    /**
+     *TODO Punto 2
+     */
+     
+    $planetas = [];
+
+    $valor = $_POST['valor'];
+
+    for ($i=1; $i <= $valor; $i++) { 
+        $planetas[$i-1] = "planeta ".$i;
+    };
+
+    $planetas = array_flip($planetas);
+
+    for ($i=1; $i <= $valor; $i++) { 
+        $planetas["planeta ".$i] = "Deshabitado";
+    };
+
+    $planetas_value = array_values($planetas);
+
+    $planetas_key = array_keys($planetas);
+
+    $tabla = '<table class="table table-dark table-striped table-hover"><thead><tr><th scope="col">Planeta</th><th scope="col">Estado</th></tr></thead><tbody>';
+    
+    for ($i=0; $i < $valor; $i++) { 
+        $tabla .= "<tr><td>$planetas_key[$i]</td><td>$planetas_value[$i]</td></tr>";
+    };
+
+    /*$tabla = '<table class="table table-dark table-striped table-hover"><thead><tr><th scope="col">Planeta</th><th scope="col">Estado</th></tr></thead><tbody>
+    
+    foreach ($planetas as $key => $value) {
+        $tabla .= "<tr><td>$key</td><td>$value</td></tr>";
+    }';*/
+
+    echo <<<HTML
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <div class="container text-center p-3">
+        <h1 style="color: white;">El estado de los planetas es: $tabla</h1>
+        <br>
+        <a href='index.html'><button class="btn btn-info m-3">Volver</button></a>
+    </div>
+    
+    HTML;
 ?>
