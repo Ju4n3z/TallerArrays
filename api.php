@@ -307,6 +307,7 @@
      *TODO Punto 8
      */
 
+    /*
      $planetas = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
 
      $numero = array_rand($planetas, 1);
@@ -321,6 +322,46 @@
     <div class="container text-center p-3">
         <h1 style="color: white;">El planeta seleccionado aleatoriamente para explorar es: $planeta</h1>
         <a href='index.html'><button class="btn btn-info">Volver</button></a>
+
+    HTML;
+
+    */
+
+    /**
+     *TODO Punto 9
+     */
+
+     $aliens = array(
+        "alien1" => "Alienigena",
+        "alien2" => "Depredador",
+        "alien3" => "E.T.",
+        "alien4" => "Extraterrestre",
+        "alien5" => "Marciano",
+        "alien6" => "Predator",
+        "alien7" => "Xenomorfo",
+        "alien8" => "Depredador",
+        "alien9" => "E.T.",
+        "alien10" => "Marciano",
+    );
+
+    $aliens = array_unique($aliens);
+
+    $tabla = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Tipos de aliens</th></tr></thead><tbody>';
+
+    foreach ($aliens as $key => $value) {
+        $tabla .= "<tr><td>$value</td></tr>";
+    }
+
+    echo <<<HTML
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <div class="container text-center p-3">
+    <h1 style="color: white;">Tabla de tipos de aliens</h1>
+    $tabla
+    </tbody></table>
+     <a href='index.html'><button class="btn btn-info">Volver</button></a>
 
     HTML;
 
