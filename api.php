@@ -254,6 +254,8 @@
      *TODO Punto 7
      */
 
+    /*
+
     $naves = array(
         "nave1" => "Emperatriz",
         "nave2" => "Fenix",
@@ -298,5 +300,28 @@
         
         HTML;
     }
+
+    */
+
+    /**
+     *TODO Punto 8
+     */
+
+     $planetas = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
+
+     $numero = array_rand($planetas, 1);
+
+    $planeta = $planetas[$numero];
+
+    echo <<<HTML
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <div class="container text-center p-3">
+        <h1 style="color: white;">El planeta seleccionado aleatoriamente para explorar es: $planeta</h1>
+        <a href='index.html'><button class="btn btn-info">Volver</button></a>
+
+    HTML;
 
 ?>
