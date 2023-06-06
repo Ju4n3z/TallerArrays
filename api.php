@@ -207,6 +207,8 @@
      *TODO Punto 6
      */
 
+    /*
+
     $planetas = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
     
     $planetas = array_map(function($value){
@@ -240,6 +242,57 @@
 
         <div class="container text-center p-3">
             <h1 style="color: white;">El planeta $planeta no existe en nuestro sistema solar</h1>
+            <a href='index.html'><button class="btn btn-info">Volver</button></a>
+        </div>
+        
+        HTML;
+    }
+
+    */
+
+    /**
+     *TODO Punto 7
+     */
+
+    $naves = array(
+        "nave1" => "Emperatriz",
+        "nave2" => "Fenix",
+        "nave3" => "Galactica",
+        "nave4" => "Halcon",
+        "nave5" => "Imperial",
+    );
+
+    $naves = array_map(function($value){
+        $value = strtolower($value);
+        return $value;
+    }, $naves);
+
+    $nave = $_POST["nave"];
+
+    $nave = strtolower($nave);
+
+    $naves = in_array($nave, $naves);
+
+    if ($naves == true) {
+        echo <<<HTML
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+        <div class="container text-center p-3">
+            <h1 style="color: white;">La nave tipo $nave existe en la flota de naves</h1>
+            <a href='index.html'><button class="btn btn-info">Volver</button></a>
+        </div>
+        
+        HTML;
+    } else {
+        echo <<<HTML
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+
+        <div class="container text-center p-3">
+            <h1 style="color: white;">La nave tipo $nave no existe en la flota de naves</h1>
             <a href='index.html'><button class="btn btn-info">Volver</button></a>
         </div>
         
