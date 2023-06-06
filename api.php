@@ -320,8 +320,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <div class="container text-center p-3">
-        <h1 style="color: white;">El planeta seleccionado aleatoriamente para explorar es: $planeta</h1>
-        <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    <h1 style="color: white;">El planeta seleccionado aleatoriamente para explorar es: $planeta</h1>
+    <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
 
     HTML;
 
@@ -331,6 +332,7 @@
      *TODO Punto 9
      */
 
+    /*
      $aliens = array(
         "alien1" => "Alienigena",
         "alien2" => "Depredador",
@@ -361,7 +363,40 @@
     <h1 style="color: white;">Tabla de tipos de aliens</h1>
     $tabla
     </tbody></table>
-     <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
+
+    HTML;
+
+    */
+
+    /**
+     *TODO Punto 10
+     */
+
+    $planetas1 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
+
+    $planetas2 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Kepler-438b", "Gliese 667 Cc" , "HD 40307g" , "Kepler-442b");
+
+    $planetas = array_intersect($planetas1, $planetas2);
+
+    $tabla = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Planetas en ambos sistemas solares</th></tr></thead><tbody>';
+
+    foreach ($planetas as $key => $value) {
+        $tabla .= "<tr><td>$value</td></tr>";
+    }
+
+    echo <<<HTML
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <div class="container text-center p-3">
+    <h1 style="color: white;">Tabla de planetas en ambos sistemas solares</h1>
+    $tabla
+    </tbody></table>
+    <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
 
     HTML;
 
