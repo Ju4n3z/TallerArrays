@@ -374,6 +374,8 @@
      *TODO Punto 10
      */
 
+    /*
+
     $planetas1 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
 
     $planetas2 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Kepler-438b", "Gliese 667 Cc" , "HD 40307g" , "Kepler-442b");
@@ -399,5 +401,51 @@
     </div>
 
     HTML;
+
+    */
+
+    /**
+     *TODO Punto 11
+     */
+
+    $planetas1 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
+
+    $planetas2 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Kepler-438b", "Gliese 667 Cc" , "HD 40307g" , "Kepler-442b");
+
+    $planetasS1 = array_diff($planetas1, $planetas2);
+
+    $planetasS2 = array_diff($planetas2, $planetas1);
+
+    $tabla1 = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Planetas únicos el sistema solar 1</th></tr></thead><tbody>';
+
+    foreach ($planetasS1 as $key => $value) {
+        $tabla1 .= "<tr><td>$value</td></tr>";
+    }
+
+    $tabla2 = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Planetas únicos el sistema solar 2</th></tr></thead><tbody>';
+
+    foreach ($planetasS2 as $key => $value) {
+        $tabla2 .= "<tr><td>$value</td></tr>";
+    }
+
+    echo <<<HTML
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <div class="container text-center p-3">
+    <h1 style="color: white;">Tabla de planetas únicos en cada sistema solar</h1>
+    $tabla1
+    </tbody></table>
+    $tabla2
+    </tbody></table>
+    <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
+
+    HTML;
+
+
+    
+
 
 ?>
