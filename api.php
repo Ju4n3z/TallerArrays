@@ -119,6 +119,8 @@
      *TODO Punto 4
      */
 
+    /*
+
     $MasayRadio = array(
         "Mercurio" => array(3.30*pow(10,23), 2439700),
         "Venus" => array(4.87*pow(10,24), 6051800),
@@ -163,6 +165,38 @@
         <a href='index.html'><button class="btn btn-info m-3">Volver</button></a>
     </div>
 
+    HTML;
+
+    */
+
+    /**
+     *TODO Punto 5
+     */
+
+    $naves = array(
+        "nave1" => 5,
+        "nave2" => 3,
+        "nave3" => 7,
+        "nave4" => 10,
+        "nave5" => 2,
+        "nave6" => 1,
+        "nave7" => 8,
+        "nave8" => 4,
+        "nave9" => 6,
+        "nave10" => 9
+    );
+
+    $naves = array_sum($naves);
+
+    echo <<<HTML
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <div class="container text-center p-3">
+        <h1 style="color: white;">La suma de la masa de las naves es: $naves </h1>
+        <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
+    
     HTML;
 
 ?>
