@@ -452,6 +452,7 @@
      *TODO Punto 12
      */
 
+    /*
     $planetas = array(
         "Sol" => 0,
         "Mercurio" => 0,
@@ -495,7 +496,42 @@
 
     HTML;
 
-    
+    */
 
+    /**
+     *TODO Punto 13
+     */
+
+    $planetas = array("Sol", "Mercurio", "Venus", "Tierra", "Marte", "Jupiter", "Saturno", "Urano", "Neptuno");
+
+    $tabla1 = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Planetas en orden original</th></tr></thead><tbody>';
+
+    foreach ($planetas as $key => $value) {
+        $tabla1 .= "<tr><td>$value</td></tr>";
+    }
+
+    $planetas = array_reverse($planetas);
+
+    $tabla2 = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Planetas en orden inverso</th></tr></thead><tbody>';
+
+    foreach ($planetas as $key => $value) {
+        $tabla2 .= "<tr><td>$value</td></tr>";
+    }
+
+    echo <<<HTML
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <div class="container text-center p-3">
+    <h1 style="color: white;">Tabla de planetas en orden inverso</h1>
+    $tabla1
+    </tbody></table>
+    $tabla2
+    </tbody></table>
+    <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
+
+    HTML;
 
 ?>
