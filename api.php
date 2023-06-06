@@ -408,6 +408,8 @@
      *TODO Punto 11
      */
 
+    /*
+
     $planetas1 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Jupiter" , "Saturno" , "Urano" , "Neptuno");
 
     $planetas2 = array("Sol", "Mercurio" , "Venus" , "Tierra" , "Marte" , "Kepler-438b", "Gliese 667 Cc" , "HD 40307g" , "Kepler-442b");
@@ -444,6 +446,54 @@
 
     HTML;
 
+    */
+
+    /**
+     *TODO Punto 12
+     */
+
+    $planetas = array(
+        "Sol" => 0,
+        "Mercurio" => 0,
+        "Venus" => 0,
+        "Tierra" => array("Luna"),
+        "Marte" => array("Fobos", "Deimos"),
+        "Jupiter" => array("Io", "Europa", "Ganímedes", "Calisto"),
+        "Saturno" => array("Mimas", "Encélado", "Tetis", "Dione", "Rea", "Titán", "Jápeto"),
+        "Urano" => array("Ariel", "Umbriel", "Titania", "Oberón", "Miranda"),
+        "Neptuno" => array("Tritón", "Nereida", "Náyade", "Talasa", "Despina", "Galatea", "Larisa", "Proteo", "Halimede", "Psámate", "Sao", "Laomedeia", "Neso", "Hippocamp"),
+    );
+
+    $satelites = $_POST["satelites"];
+
+    $satelites = strtolower($satelites);
+    $satelites = ucfirst($satelites);
+
+    $planeta = $planetas[$satelites];
+
+    $tabla = '<table class="table table-dark table-striped table-hover text-center"><thead><tr><th scope="col">Satélites de '.$satelites.'</th></tr></thead><tbody>';
+
+    if (is_array($planeta)) {
+        foreach ($planeta as $key => $value) {
+            $tabla .= "<tr><td>$value</td></tr>";
+        }
+    } else {
+        $tabla .= "<tr><td>$planeta</td></tr>";
+    }
+
+    echo <<<HTML
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <div class="container text-center p-3">
+    <h1 style="color: white;">Tabla de satélites de $satelites</h1>
+    $tabla
+    </tbody></table>
+    <a href='index.html'><button class="btn btn-info">Volver</button></a>
+    </div>
+
+    HTML;
 
     
 
